@@ -9,9 +9,9 @@ tolua_runtime with lua-protobuf
 
 ## Library
 
-**tolua# 1.0.8.584**
+**tolua_runtime 1.0.8.584**
 
-https://github.com/topameng/tolua
+https://github.com/topameng/tolua_runtime
 
 **lua-protobuf 0.3.2**
 

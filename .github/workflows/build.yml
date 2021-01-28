@@ -5,7 +5,7 @@ on: push
 jobs:
   # Windows 平台编译
   windows:
-    runs-on: windows-2016
+    runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -28,4 +28,61 @@ jobs:
           path: |
             ./Plugins/x86/*
             ./Plugins/x86_64/*
+          name: tolua_pb
+
+  # linux平台编译
+  linux:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: "Buind tolua for Linux"
+        run: |
+          .\build_ubuntu.sh
+
+      # 上传编译结果
+      - name: "Upload tolua for Linux"
+        uses: actions/upload-artifact@v2
+        with:
+          path: |
+            ./Plugins/ubuntu/*
+          name: tolua_pb
+
+  # Mac平台编译
+  osx:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: "Buind tolua for MacOS"
+        run: |
+          .\build_osx.sh
+
+      # 上传编译结果
+      - name: "Upload tolua for MacOS"
+        uses: actions/upload-artifact@v2
+        with:
+          path: |
+            ./Plugins/tolua.bundle/*
+          name: tolua_pb
+
+  # iOS平台编译
+  ios:
+    runs-on: macos-10.15
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: "Buind tolua for iOS"
+        run: |
+          .\build_ios.sh
+
+      # 上传编译结果
+      - name: "Upload tolua for iOS"
+        uses: actions/upload-artifact@v2
+        with:
+          path: |
+            ./Plugins/iOS/*
           name: tolua_pb

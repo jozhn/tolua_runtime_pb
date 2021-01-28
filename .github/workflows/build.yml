@@ -9,18 +9,18 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      
+
       # 安装MSVC环境
       - name: "Insatll MSVC"
         uses: microsoft/setup-msbuild@v1.0.2
-      
+
       # 编译构建
       - name: "Build tolua for Windows"
         run: |
           .\build_win32.sh
           .\build_win64.sh
       - uses: ilammy/msvc-dev-cmd@v1
-      
+
       # 上传编译结果
       - name: "Upload tolua for Windows"
         uses: actions/upload-artifact@v2

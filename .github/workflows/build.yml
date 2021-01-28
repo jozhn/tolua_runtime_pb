@@ -55,6 +55,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: '9.4.1'
@@ -77,6 +78,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: '9.4.1'

@@ -51,11 +51,14 @@ jobs:
 
   # Mac平台编译
   osx:
-    runs-on: macos-latest
+    runs-on: macos-10.14
 
     steps:
       - uses: actions/checkout@v2
-      
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '9.4.1'
+
       - name: "Buind tolua for MacOS"
         run: |
           ./build_osx.sh
@@ -70,11 +73,14 @@ jobs:
 
   # iOS平台编译
   ios:
-    runs-on: macos-10.15
+    runs-on: macos-10.14
 
     steps:
       - uses: actions/checkout@v2
-      
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '9.4.1'
+
       - name: "Buind tolua for iOS"
         run: |
           ./build_ios.sh

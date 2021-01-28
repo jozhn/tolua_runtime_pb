@@ -49,16 +49,16 @@ jobs:
             ./Plugins/ubuntu/*
           name: tolua_pb
 
-  # Mac平台编译
+  # Mac平台编译 Github只提供了10.15
   osx:
-    runs-on: macos-10.14
+    runs-on: macos-10.15
 
     steps:
       - uses: actions/checkout@v2
 
       - uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '9.4.1'
+          xcode-version: '10.3.0'
 
       - name: "Buind tolua for MacOS"
         run: |
@@ -72,16 +72,16 @@ jobs:
             ./Plugins/tolua.bundle/*
           name: tolua_pb
 
-  # iOS平台编译
+  # iOS平台编译 Github只提供了10.15
   ios:
-    runs-on: macos-10.14
+    runs-on: macos-10.15
 
     steps:
       - uses: actions/checkout@v2
 
       - uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '9.4.1'
+          xcode-version: '10.3.0'
 
       - name: "Buind tolua for iOS"
         run: |

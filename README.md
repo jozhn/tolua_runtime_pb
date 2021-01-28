@@ -40,3 +40,7 @@ NDK: android-ndk-r10e
 ## Tutorial
 
 tolua编译集成lua-protobuf指南： https://john.js.org/2020/11/02/ToLua-Compile-With-lua-protobuf/
+
+## Build
+
+新增Github Actions自动化构建

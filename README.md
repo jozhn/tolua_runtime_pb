@@ -45,3 +45,4 @@ tolua编译集成lua-protobuf指南： https://john.js.org/2020/11/02/ToLua-Comp
 
 新增Github Actions自动化构建
 
+只能构建出来Windows的版本，因为Github Actions不提供macOS: 10.14了，更新的版本都不支持Xcode9.4.1。。。太坑了，放弃了。

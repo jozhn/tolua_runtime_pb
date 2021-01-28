@@ -39,7 +39,7 @@ jobs:
       
       - name: "Buind tolua for Linux"
         run: |
-          .\build_ubuntu.sh
+          ./build_ubuntu.sh
 
       # 上传编译结果
       - name: "Upload tolua for Linux"
@@ -58,7 +58,7 @@ jobs:
       
       - name: "Buind tolua for MacOS"
         run: |
-          .\build_osx.sh
+          ./build_osx.sh
 
       # 上传编译结果
       - name: "Upload tolua for MacOS"
@@ -77,7 +77,7 @@ jobs:
       
       - name: "Buind tolua for iOS"
         run: |
-          .\build_ios.sh
+          ./build_ios.sh
 
       # 上传编译结果
       - name: "Upload tolua for iOS"

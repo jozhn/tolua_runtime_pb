@@ -1,0 +1,36 @@
+name: build
+
+on: 
+  push:
+    branches: [ main ]
+    paths: 
+      - build/**
+      - .github/workflows/build.yml
+
+jobs:
+  # Windows 平台编译
+  windows:
+    runs-on: windows-2016
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      # 安装MSVC环境
+      - name: "Insatll MSVC"
+        uses: microsoft/setup-msbuild@v1.0.2
+      
+      # 编译构建
+      - name: "Build tolua for Windows"
+        run: |
+          .\build_win32.sh
+          .\build_win64.sh
+      - uses: ilammy/msvc-dev-cmd@v1
+      
+      # 上传编译结果
+      - name: "Upload tolua for Windows"
+        uses: actions/upload-artifact@v2
+        with:
+          path: |
+            ./Plugins/x86/*
+            ./Plugins/x86_64/*
+          name: tolua_pb
